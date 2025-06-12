@@ -58,7 +58,10 @@
     <!-- Header -->
     <header class="w-full bg-header-bg shadow-sm z-50 sticky top-0">
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-accent-orange font-poppins text-3xl font-bold tracking-wide">Devnest</a>
+            <div class="flex items-center space-x-3">
+                <img src="images/logo.jpg" alt="Devnest Logo" class="h-10 w-10 object-contain" />
+                <a href="#" class="text-accent-orange font-poppins text-3xl font-bold tracking-wide">Devnest</a>
+            </div>
             
             <!-- Desktop Navigation -->
             <div class="hidden md:flex space-x-8">
@@ -113,7 +116,7 @@
             </div>
             <!-- Right: Hero Image -->
             <div class="w-full md:w-1/2 flex justify-center md:justify-end relative">
-                <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=500&q=80" alt="Hero" class="w-80 h-80 object-cover rounded-2xl hero-glow shadow-xl border-4 border-header-bg bg-header-bg" style="margin-bottom:-2rem;">
+                <img src="images/my portrate photo.jpg" alt="Devnest Founder Portrait" class="w-80 h-80 object-cover rounded-2xl hero-glow shadow-xl border-4 border-header-bg bg-header-bg" style="margin-bottom:-2rem;">
                 <!-- Optional: Add a glowing SVG or overlay for extra effect -->
             </div>
         </div>
@@ -121,9 +124,10 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="bg-gradient-to-br from-header-bg via-deep-blue to-black section-padding">
+    <section id="services" class="bg-white section-padding">
         <div class="container mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12 tracking-tight">What We Offer</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-header-bg text-center mb-12 tracking-tight">Our signature services
+            </h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Service Card 1 -->
                 <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-deep-blue via-header-bg to-black border-2 border-accent-orange/30 flex flex-col items-start hover:scale-105 transition-transform">
@@ -163,9 +167,9 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="bg-gradient-to-br from-header-bg via-deep-blue to-black section-padding">
+    <section id="portfolio" class="bg-white section-padding">
         <div class="container mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12 tracking-tight">Our Portfolio</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-header-bg text-center mb-12 tracking-tight">Our Portfolio</h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Portfolio Item 1 -->
                 <div class="rounded-2xl p-6 shadow-xl bg-gradient-to-br from-deep-blue via-header-bg to-black border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform">
@@ -199,16 +203,13 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="bg-gradient-to-br from-header-bg via-deep-blue to-black section-padding">
+    <section id="about" class="bg-white section-padding">
         <div class="container mx-auto">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-accent-orange mb-6">About Devnest</h2>
-                    <p class="text-light-gray text-lg mb-4">
-                        We're a passionate team of digital creators based in Narok, dedicated to helping local businesses thrive in the digital world. Our mission is to create beautiful, functional websites that drive real business results.
-                    </p>
-                    <p class="text-light-gray text-lg">
-                        With years of experience in web design and development, we understand what it takes to create an online presence that truly represents your brand and connects with your audience.
+                    <h2 class="text-3xl md:text-4xl font-bold text-header-bg mb-6">About Devnest</h2>
+                    <p class="text-header-bg text-lg mb-4">
+                        Devnest is a creative web design and digital solutions agency based in Narok. We specialize in building beautiful, high-performing websites and digital experiences for local businesses and organizations. Our mission is to empower brands to grow, connect, and thrive online through innovative design, reliable development, and personal support. With a passion for creativity and a commitment to excellence, we help our clients stand out and succeed in the digital world.
                     </p>
                 </div>
                 <div class="flex justify-center">
@@ -219,9 +220,9 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="bg-gradient-to-br from-header-bg via-deep-blue to-black section-padding">
+    <section class="bg-white section-padding">
         <div class="container mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12 tracking-tight">Why Choose Devnest?</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-header-bg text-center mb-12 tracking-tight">Why Choose Devnest?</h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
                 <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-accent-orange via-accent-orange-dark to-header-bg border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform">
@@ -246,6 +247,68 @@
                     <p class="text-light-gray text-center">
                         Deep understanding of the local market and business needs in Narok and surrounding areas.
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto">
+            <!-- First Row -->
+            <div class="grid md:grid-cols-2 gap-8 mb-16 items-start">
+                <!-- Left: Bad Practices -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-header-bg mb-6">Why Most Websites Are Failing in 2025</h2>
+                    <ul class="mb-6 space-y-2 text-lg">
+                        <li class="flex items-center"><span class="text-pink-500 text-2xl mr-3">&#10060;</span>Launched and forgotten</li>
+                        <li class="flex items-center"><span class="text-pink-500 text-2xl mr-3">&#10060;</span>Slow load times</li>
+                        <li class="flex items-center"><span class="text-pink-500 text-2xl mr-3">&#10060;</span>Broken links and outdated plugins</li>
+                        <li class="flex items-center"><span class="text-pink-500 text-2xl mr-3">&#10060;</span>Three blog posts and radio silence</li>
+                        <li class="flex items-center"><span class="text-pink-500 text-2xl mr-3">&#10060;</span>Random keyword stuffing with zero traffic</li>
+                    </ul>
+                    <p class="mb-2 text-header-bg text-lg">If that sounds familiar, you don't have a marketing asset—you have a liability.</p>
+                    <p class="text-header-bg text-lg">The internet rewards consistency, relevance, and speed. That's what we deliver.</p>
+                </div>
+                <!-- Right: Website Management Card -->
+                <div class="rounded-2xl p-8 bg-header-bg text-white shadow-xl flex flex-col justify-between min-h-[320px]">
+                    <div class="flex items-center mb-4">
+                        <span class="text-2xl mr-2">🔧</span>
+                        <span class="text-accent-orange font-bold text-2xl">Website Management</span>
+                    </div>
+                    <p class="mb-4">Think of us as your digital pit crew. While you focus on your business, we keep your site tuned and performing.</p>
+                    <ul class="list-decimal list-inside space-y-1 text-light-gray">
+                        <li>Real-time performance tracking</li>
+                        <li>Speed optimization</li>
+                        <li>Backup + security systems</li>
+                        <li>Design cleanups (fonts, mobile responsiveness)</li>
+                        <li>Plugin/software updates</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Second Row -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Left: AI-Powered SEO Strategy -->
+                <div class="rounded-2xl p-8 bg-accent-orange text-header-bg shadow-xl flex flex-col min-h-[320px]">
+                    <span class="mb-2 font-medium">What We Offer</span>
+                    <h3 class="text-2xl font-bold mb-4">AI-Powered SEO Strategy</h3>
+                    <p class="mb-4">SEO is not a side hustle. It's a system. We treat it like one.</p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Strategic keyword research</li>
+                        <li>Content planning & optimization</li>
+                        <li>Competitor analysis</li>
+                        <li>Performance reporting</li>
+                    </ul>
+                </div>
+                <!-- Right: Who We Work Best With -->
+                <div class="rounded-2xl p-8 bg-gray-200 text-header-bg shadow-xl flex flex-col min-h-[320px]">
+                    <h3 class="text-2xl font-bold mb-4">Who We Work Best With</h3>
+                    <p class="mb-4">We're built for entrepreneurs and experts who get it.</p>
+                    <ol class="list-decimal list-inside space-y-1">
+                        <li><span class="font-bold">Consultants & coaches</span> who want to rank and build trust</li>
+                        <li><span class="font-bold">Service businesses</span> who want to dominate local search</li>
+                        <li><span class="font-bold">Brands</span> who want to grow with a digital-first approach</li>
+                    </ol>
                 </div>
             </div>
         </div>
