@@ -33,8 +33,14 @@
         }
     </script>
     
+    <!-- AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+
     <style>
         /* Custom styles */
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Inter', sans-serif;
         }
@@ -51,6 +57,28 @@
         }
         .hero-glow {
             box-shadow: 0 0 60px 10px #FF9900, 0 0 0 8px rgba(255,255,255,0.1);
+        }
+        /* Remove custom fade-in styles as AOS will handle */
+        /*
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1);
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: none;
+        }
+        */
+        .mobile-menu-transition {
+            transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.4s cubic-bezier(0.4,0,0.2,1);
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+        }
+        .mobile-menu-transition.open {
+            max-height: 500px; /* Sufficient height to show all content */
+            opacity: 1;
         }
     </style>
 </head>
@@ -82,7 +110,7 @@
         </nav>
         
         <!-- Mobile Navigation -->
-        <div class="md:hidden hidden" id="mobile-menu">
+        <div class="md:hidden mobile-menu-transition" id="mobile-menu">
             <div class="px-4 py-2 space-y-4 bg-header-bg">
                 <a href="#about" class="block text-white hover:text-accent-orange transition-colors">About us</a>
                 <a href="#services" class="block text-white hover:text-accent-orange transition-colors">Our Services</a>
@@ -94,7 +122,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative section-padding pt-16 md:pt-24 bg-gradient-to-br from-deep-blue via-header-bg to-black overflow-hidden">
+    <section class="relative section-padding pt-16 md:pt-24 bg-gradient-to-br from-deep-blue via-header-bg to-black overflow-hidden" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
         <!-- Parallax Background Image -->
         <div class="absolute inset-0 w-full h-full z-0 parallax-bg" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80'); background-size:cover; background-position:center; will-change:transform;"></div>
         <!-- Dark Overlay -->
@@ -102,20 +130,20 @@
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between relative z-10">
             <!-- Left: Text -->
             <div class="w-full md:w-1/2 text-center md:text-left mb-12 md:mb-0">
-                <span class="inline-block bg-hero-badge text-white font-semibold px-6 py-2 rounded-full mb-6 shadow-lg">We are a Digital Agency</span>
-                <h1 class="text-3xl md:text-5xl font-bold mb-6" style="color:#FF9900;">
+                <span class="inline-block bg-hero-badge text-white font-semibold px-6 py-2 rounded-full mb-6 shadow-lg" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">We are a Digital Agency</span>
+                <h1 class="text-3xl md:text-5xl font-bold mb-6" style="color:#FF9900;" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="100">
                     We Don't Just Build Websites.<br>We Build Digital Growth Engines.
                 </h1>
-                <p class="text-lg md:text-xl text-white mb-8 max-w-xl mx-auto md:mx-0">
+                <p class="text-lg md:text-xl text-white mb-8 max-w-xl mx-auto md:mx-0" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="200">
                     Because in 2025, design without performance is dead weight. We help serious brands stay fast, visible, and in control—using strategy, not guesswork.
                 </p>
-                <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+                <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="300">
                     <a href="#contact" class="bg-accent-orange hover:bg-accent-orange-dark text-white font-bold px-8 py-4 rounded-full shadow transition-all text-lg">Talk to Us for Free →</a>
                     <a href="#portfolio" class="border-2 border-accent-orange text-accent-orange hover:bg-accent-orange hover:text-white font-bold px-8 py-4 rounded-full transition-all text-lg">Our Recent Projects</a>
                 </div>
             </div>
             <!-- Right: Hero Image -->
-            <div class="w-full md:w-1/2 flex justify-center md:justify-end relative">
+            <div class="w-full md:w-1/2 flex justify-center md:justify-end relative" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="400">
                 <img src="images/my portrate photo.jpg" alt="Devnest Founder Portrait" class="w-80 h-80 object-cover rounded-2xl hero-glow shadow-xl border-4 border-header-bg bg-header-bg" style="margin-bottom:-2rem;">
                 <!-- Optional: Add a glowing SVG or overlay for extra effect -->
             </div>
@@ -124,13 +152,13 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="bg-white section-padding">
+    <section id="services" class="bg-white section-padding" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-header-bg text-center mb-12 tracking-tight">Our signature services
             </h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Service Card 1 -->
-                <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-deep-blue via-header-bg to-black border-2 border-accent-orange/30 flex flex-col items-start hover:scale-105 transition-transform">
+                <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-deep-blue via-header-bg to-black border-2 border-accent-orange/30 flex flex-col items-start hover:scale-105 transition-transform" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
                     <div class="text-4xl mb-6 text-accent-orange">🎨</div>
                     <h3 class="text-2xl font-bold mb-4 text-white">Web Design</h3>
                     <ul class="space-y-3">
@@ -141,7 +169,7 @@
                     </ul>
                 </div>
                 <!-- Service Card 2 -->
-                <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-accent-orange via-accent-orange-dark to-header-bg border-2 border-accent-orange/30 flex flex-col items-start hover:scale-105 transition-transform">
+                <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-accent-orange via-accent-orange-dark to-header-bg border-2 border-accent-orange/30 flex flex-col items-start hover:scale-105 transition-transform" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
                     <div class="text-4xl mb-6 text-white">💻</div>
                     <h3 class="text-2xl font-bold mb-4 text-white">Web Development</h3>
                     <ul class="space-y-3">
@@ -152,7 +180,7 @@
                     </ul>
                 </div>
                 <!-- Service Card 3 -->
-                <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-header-bg via-deep-blue to-black border-2 border-accent-orange/30 flex flex-col items-start hover:scale-105 transition-transform">
+                <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-header-bg via-deep-blue to-black border-2 border-accent-orange/30 flex flex-col items-start hover:scale-105 transition-transform" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
                     <div class="text-4xl mb-6 text-accent-orange">📱</div>
                     <h3 class="text-2xl font-bold mb-4 text-white">Digital Marketing</h3>
                     <ul class="space-y-3">
@@ -167,12 +195,12 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="bg-white section-padding">
+    <section id="portfolio" class="bg-white section-padding" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-header-bg text-center mb-12 tracking-tight">Our Portfolio</h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Portfolio Item 1 -->
-                <div class="rounded-2xl p-6 shadow-xl bg-gradient-to-br from-deep-blue via-header-bg to-black border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform">
+                <div class="rounded-2xl p-6 shadow-xl bg-gradient-to-br from-deep-blue via-header-bg to-black border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
                     <div class="w-full flex justify-center mb-4">
                         <img src="https://images.unsplash.com/photo-1556742031-c6961e8560b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Restaurant Website" class="w-40 h-72 object-cover rounded-xl shadow-lg border-4 border-header-bg" style="box-shadow:0 0 32px 0 #FF9900;">
                     </div>
@@ -181,7 +209,7 @@
                     <a href="#" class="inline-block bg-accent-orange hover:bg-accent-orange-dark text-white font-bold px-6 py-2 rounded-full shadow transition-all">Visit Website →</a>
                 </div>
                 <!-- Portfolio Item 2 -->
-                <div class="rounded-2xl p-6 shadow-xl bg-gradient-to-br from-accent-orange via-accent-orange-dark to-header-bg border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform">
+                <div class="rounded-2xl p-6 shadow-xl bg-gradient-to-br from-accent-orange via-accent-orange-dark to-header-bg border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
                     <div class="w-full flex justify-center mb-4">
                         <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Tourism Website" class="w-40 h-72 object-cover rounded-xl shadow-lg border-4 border-header-bg" style="box-shadow:0 0 32px 0 #FF9900;">
                     </div>
@@ -190,7 +218,7 @@
                     <a href="#" class="inline-block bg-header-bg hover:bg-deep-blue text-accent-orange font-bold px-6 py-2 rounded-full shadow transition-all border-2 border-accent-orange">Visit Website →</a>
                 </div>
                 <!-- Portfolio Item 3 -->
-                <div class="rounded-2xl p-6 shadow-xl bg-gradient-to-br from-header-bg via-deep-blue to-black border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform">
+                <div class="rounded-2xl p-6 shadow-xl bg-gradient-to-br from-header-bg via-deep-blue to-black border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
                     <div class="w-full flex justify-center mb-4">
                         <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="E-commerce Website" class="w-40 h-72 object-cover rounded-xl shadow-lg border-4 border-header-bg" style="box-shadow:0 0 32px 0 #FF9900;">
                     </div>
@@ -203,7 +231,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="bg-white section-padding">
+    <section id="about" class="bg-white section-padding fade-in" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
         <div class="container mx-auto">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
@@ -220,12 +248,12 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="bg-white section-padding">
+    <section class="bg-white section-padding fade-in" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-header-bg text-center mb-12 tracking-tight">Why Choose Devnest?</h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
-                <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-accent-orange via-accent-orange-dark to-header-bg border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform">
+                <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-accent-orange via-accent-orange-dark to-header-bg border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
                     <div class="text-4xl mb-4 text-white">💰</div>
                     <h3 class="text-xl font-bold mb-4 text-white">Affordable Pricing</h3>
                     <p class="text-white text-center">
@@ -233,7 +261,7 @@
                     </p>
                 </div>
                 <!-- Feature 2 -->
-                <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-header-bg via-deep-blue to-black border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform">
+                <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-header-bg via-deep-blue to-black border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
                     <div class="text-4xl mb-4 text-accent-orange">🤝</div>
                     <h3 class="text-xl font-bold mb-4 text-white">Personal Support</h3>
                     <p class="text-light-gray text-center">
@@ -241,7 +269,7 @@
                     </p>
                 </div>
                 <!-- Feature 3 -->
-                <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-header-bg via-deep-blue to-black border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform">
+                <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-header-bg via-deep-blue to-black border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
                     <div class="text-4xl mb-4 text-accent-orange">🎯</div>
                     <h3 class="text-xl font-bold mb-4 text-white">Local Expertise</h3>
                     <p class="text-light-gray text-center">
@@ -253,12 +281,12 @@
     </section>
 
     <!-- Value Proposition Section -->
-    <section class="bg-white py-16">
+    <section class="bg-white py-16 fade-in" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
         <div class="container mx-auto">
             <!-- First Row -->
             <div class="grid md:grid-cols-2 gap-8 mb-16 items-start">
                 <!-- Left: Bad Practices -->
-                <div>
+                <div data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
                     <h2 class="text-3xl md:text-4xl font-bold text-header-bg mb-6">Why Most Websites Are Failing in 2025</h2>
                     <ul class="mb-6 space-y-2 text-lg">
                         <li class="flex items-center"><span class="text-pink-500 text-2xl mr-3">&#10060;</span>Launched and forgotten</li>
@@ -271,7 +299,7 @@
                     <p class="text-header-bg text-lg">The internet rewards consistency, relevance, and speed. That's what we deliver.</p>
                 </div>
                 <!-- Right: Website Management Card -->
-                <div class="rounded-2xl p-8 bg-header-bg text-white shadow-xl flex flex-col justify-between min-h-[320px]">
+                <div class="rounded-2xl p-8 bg-header-bg text-white shadow-xl flex flex-col justify-between min-h-[320px]" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
                     <div class="flex items-center mb-4">
                         <span class="text-2xl mr-2">🔧</span>
                         <span class="text-accent-orange font-bold text-2xl">Website Management</span>
@@ -289,7 +317,7 @@
             <!-- Second Row -->
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Left: AI-Powered SEO Strategy -->
-                <div class="rounded-2xl p-8 bg-accent-orange text-header-bg shadow-xl flex flex-col min-h-[320px]">
+                <div class="rounded-2xl p-8 bg-accent-orange text-header-bg shadow-xl flex flex-col min-h-[320px]" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
                     <span class="mb-2 font-medium">What We Offer</span>
                     <h3 class="text-2xl font-bold mb-4">AI-Powered SEO Strategy</h3>
                     <p class="mb-4">SEO is not a side hustle. It's a system. We treat it like one.</p>
@@ -301,7 +329,7 @@
                     </ul>
                 </div>
                 <!-- Right: Who We Work Best With -->
-                <div class="rounded-2xl p-8 bg-gray-200 text-header-bg shadow-xl flex flex-col min-h-[320px]">
+                <div class="rounded-2xl p-8 bg-gray-200 text-header-bg shadow-xl flex flex-col min-h-[320px]" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
                     <h3 class="text-2xl font-bold mb-4">Who We Work Best With</h3>
                     <p class="mb-4">We're built for entrepreneurs and experts who get it.</p>
                     <ol class="list-decimal list-inside space-y-1">
@@ -315,7 +343,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-gradient-to-br from-accent-orange via-accent-orange-dark to-header-bg section-padding">
+    <section id="contact" class="bg-gradient-to-br from-accent-orange via-accent-orange-dark to-header-bg section-padding fade-in" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">Ready to Build With Devnest?</h2>
             <a href="https://wa.me/your-number" class="inline-block bg-white text-accent-orange font-bold px-10 py-4 rounded-full text-lg shadow-lg hover:bg-accent-orange hover:text-white transition-all mb-8 border-2 border-white">Chat on WhatsApp</a>
@@ -337,26 +365,66 @@
         </div>
     </footer>
 
-    <!-- Mobile Menu Script -->
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        AOS.init({
+            duration: 700,
+            easing: 'ease-out',
+            once: true,
+            offset: 120
+        });
+
+        // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+        let menuOpen = false;
         mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileMenu.classList.add('open');
+            } else {
+                mobileMenu.classList.remove('open');
+            }
         });
-    </script>
 
-    <!-- Update parallax script for hero background -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const parallaxBg = document.querySelector('.parallax-bg');
+        // Close mobile menu when a nav link is clicked
+        const mobileNavLinks = mobileMenu.querySelectorAll('a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                menuOpen = false; // Reset the state
+            });
+        });
+
+        // Remove custom fade-in on scroll as AOS is now used
+        /*
+        function revealOnScroll() {
+            const fadeEls = document.querySelectorAll('.fade-in');
+            const windowHeight = window.innerHeight;
+            fadeEls.forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                // Adjust the 60px offset as needed for when the animation should trigger
+                if (top < windowHeight - 60) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            revealOnScroll(); // Check on page load
+            window.addEventListener('scroll', revealOnScroll);
+        });
+        */
+
+        // Parallax script for hero background
+        const parallaxBg = document.querySelector('.parallax-bg');
+        if (parallaxBg) { // Ensure element exists before adding listener
             window.addEventListener('scroll', function() {
                 const scrolled = window.scrollY;
                 // Parallax effect: move background slower than scroll
                 parallaxBg.style.transform = `translateY(${scrolled * 0.3}px)`;
             });
-        });
+        }
     </script>
 </body>
 </html>
