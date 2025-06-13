@@ -80,6 +80,9 @@
             max-height: 500px; /* Sufficient height to show all content */
             opacity: 1;
         }
+        html {
+            scroll-padding-top: 90px; /* Adjust this value to be slightly more than your header's height */
+        }
     </style>
     <style>
         :target {
@@ -462,11 +465,11 @@
                         <div class="flex items-center mb-4">
                             <span class="text-accent-orange text-sm font-medium">Web Design</span>
                             <span class="mx-2 text-gray-400">•</span>
-                            <span class="text-gray-500 text-sm">March 15, 2024</span>
+                            <span class="text-gray-500 text-sm">January 15, 2025</span>
                         </div>
-                        <h3 class="text-xl font-bold text-header-bg mb-3">Top Web Design Trends for 2024</h3>
-                        <p class="text-gray-600 text-sm md:text-base mb-4">Discover the latest trends in web design that are shaping the digital landscape in 2024.</p>
-                        <a href="#" class="text-accent-orange font-medium hover:text-accent-orange-dark transition-colors inline-flex items-center">
+                        <h3 class="text-xl font-bold text-header-bg mb-3">Top Web Design Trends for 2025</h3>
+                        <p class="text-gray-600 text-sm md:text-base mb-4">Discover the emerging trends in web design that will shape the digital landscape in 2025.</p>
+                        <a href="blog-post-1.html" class="text-accent-orange font-medium hover:text-accent-orange-dark transition-colors inline-flex items-center">
                             Read More
                             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -482,11 +485,11 @@
                         <div class="flex items-center mb-4">
                             <span class="text-accent-orange text-sm font-medium">SEO</span>
                             <span class="mx-2 text-gray-400">•</span>
-                            <span class="text-gray-500 text-sm">March 10, 2024</span>
+                            <span class="text-gray-500 text-sm">January 10, 2025</span>
                         </div>
                         <h3 class="text-xl font-bold text-header-bg mb-3">Essential SEO Tips for Local Businesses</h3>
                         <p class="text-gray-600 text-sm md:text-base mb-4">Learn how to optimize your website for local search and attract more customers in your area.</p>
-                        <a href="#" class="text-accent-orange font-medium hover:text-accent-orange-dark transition-colors inline-flex items-center">
+                        <a href="blog-post-2.html" class="text-accent-orange font-medium hover:text-accent-orange-dark transition-colors inline-flex items-center">
                             Read More
                             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -501,12 +504,12 @@
                     <div class="p-6">
                         <div class="flex items-center mb-4">
                             <span class="text-accent-orange text-sm font-medium">Marketing</span>
-                            <span class="mx-2 text-gray-4">•</span>
-                            <span class="text-gray-500 text-sm">March 5, 2024</span>
+                            <span class="mx-2 text-gray-400">•</span>
+                            <span class="text-gray-500 text-sm">January 5, 2025</span>
                         </div>
                         <h3 class="text-xl font-bold text-header-bg mb-3">Digital Marketing Strategies That Work</h3>
                         <p class="text-gray-600 text-sm md:text-base mb-4">Explore effective digital marketing strategies to grow your business in the digital age.</p>
-                        <a href="#" class="text-accent-orange font-medium hover:text-accent-orange-dark transition-colors inline-flex items-center">
+                        <a href="blog-post-3.html" class="text-accent-orange font-medium hover:text-accent-orange-dark transition-colors inline-flex items-center">
                             Read More
                             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -585,29 +588,6 @@
                 parallaxBg.style.transform = `translateY(${scrolled * 0.3}px)`;
             });
         }
-
-        // Custom smooth scrolling for anchor links to account for fixed header
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-
-                if (targetElement) {
-                    const header = document.querySelector('header');
-                    const headerHeight = header ? header.offsetHeight : 0; // Get header height, default to 0 if not found
-                    
-                    // Calculate scroll position, adjusting for the fixed header
-                    const scrollPosition = targetElement.offsetTop - headerHeight;
-
-                    window.scrollTo({
-                        top: scrollPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
     </script>
 </body>
 </html>
