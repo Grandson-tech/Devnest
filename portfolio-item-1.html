@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Restaurant - Devnest Creatives Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-blue': '#003344',
+                        'accent-orange': '#FF9900',
+                        'accent-orange-dark': '#e67c00',
+                        'header-bg': '#01202b',
+                        'light-gray': '#F3F4F6',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-light-gray">
+    <!-- Header -->
+    <header class="w-full bg-header-bg shadow-sm z-50 sticky top-0">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <a href="index.html" class="text-accent-orange font-poppins text-2xl md:text-3xl font-bold tracking-wide">Devnest</a>
+            </div>
+            <a href="index.html#portfolio" class="text-white hover:text-accent-orange transition-colors font-medium">← Back to Portfolio</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12 max-w-4xl">
+        <article class="bg-white rounded-2xl shadow-xl p-8">
+            <!-- Project Header -->
+            <header class="mb-8">
+                <h1 class="text-3xl md:text-4xl font-bold text-header-bg mb-4">Local Restaurant Website</h1>
+                <p class="text-gray-600 text-lg">A modern website with an integrated online ordering system, designed to enhance customer experience and streamline operations for a local restaurant.</p>
+            </header>
+
+            <!-- Featured Image -->
+            <img src="https://images.unsplash.com/photo-1556742031-c6961e8560b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                 alt="Local Restaurant Website" 
+                 class="w-full h-64 md:h-96 object-cover rounded-xl mb-8">
+
+            <!-- Project Details -->
+            <div class="prose prose-lg max-w-none">
+                <h2 class="text-2xl font-bold text-header-bg mt-8 mb-4">Project Overview</h2>
+                <p class="text-gray-700 mb-6">
+                    This project involved creating a fresh, user-friendly online presence for a popular local restaurant. The goal was to not only showcase their delicious menu and inviting ambiance but also to implement a seamless online ordering system that would boost efficiency and customer convenience. We focused on a design that reflected the restaurant's brand, with easy navigation and high-quality imagery.
+                </p>
+
+                <h2 class="text-2xl font-bold text-header-bg mt-8 mb-4">Key Features</h2>
+                <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                    <li>**Custom Web Design:** A unique and aesthetically pleasing design that captures the restaurant's essence.</li>
+                    <li>**Online Ordering System:** Integrated, easy-to-use platform for customers to place orders for pickup or delivery.</li>
+                    <li>**Interactive Menu:** High-resolution images and detailed descriptions for each menu item.</li>
+                    <li>**Mobile Responsiveness:** Optimized for a flawless experience across all devices, from desktops to smartphones.</li>
+                    <li>**Gallery & Testimonials:** Sections to showcase the restaurant's dishes and positive customer reviews.</li>
+                    <li>**Contact & Location:** Clear display of contact information, opening hours, and an interactive map.</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-header-bg mt-8 mb-4">Technologies Used</h2>
+                <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                    <li>HTML5, CSS3, JavaScript</li>
+                    <li>Tailwind CSS for rapid styling</li>
+                    <li>Custom Backend Integration (for ordering system)</li>
+                    <li>Responsive Design Frameworks</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-header-bg mt-8 mb-4">Results</h2>
+                <p class="text-gray-700 mb-6">
+                    The new website significantly improved the restaurant's online visibility and customer engagement. The online ordering system led to a measurable increase in orders and positive customer feedback, streamlining the restaurant's operations and boosting its local presence.
+                </p>
+
+                <div class="bg-light-gray p-6 rounded-xl mt-8">
+                    <h3 class="text-xl font-bold text-header-bg mb-4">Ready for Your Next Digital Project?</h3>
+                    <p class="text-gray-700 mb-4">
+                        Whether you're a restaurant, a local business, or an entrepreneur, Devnest Creatives can help you build a stunning and functional website. Contact us today to discuss your vision.
+                    </p>
+                    <a href="index.html#contact" class="inline-block bg-accent-orange hover:bg-accent-orange-dark text-white font-bold px-6 py-3 rounded-full shadow transition-all">Get in Touch →</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-header-bg text-light-gray py-8 mt-12">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Devnest Creatives. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 
