@@ -81,6 +81,11 @@
             opacity: 1;
         }
     </style>
+    <style>
+        :target {
+            scroll-margin-top: 8rem; /* Adjusted to account for the fixed header height */
+        }
+    </style>
 </head>
 <body class="bg-deep-blue">
     <!-- Header -->
@@ -126,20 +131,28 @@
         <!-- Parallax Background Image -->
         <div class="absolute inset-0 w-full h-full z-0 parallax-bg" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80'); background-size:cover; background-position:center; will-change:transform;"></div>
         <!-- Dark Overlay -->
-        <div class="absolute inset-0 w-full h-full z-0" style="background:rgba(0,34,51,0.7);"></div>
+        <div class="absolute inset-0 w-full h-full z-0" style="background:rgba(0,34,51,0.85);"></div>
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between relative z-10">
             <!-- Left: Text -->
             <div class="w-full md:w-1/2 text-center md:text-left mb-12 md:mb-0">
-                <span class="inline-block bg-hero-badge text-white font-semibold px-6 py-2 rounded-full mb-6 shadow-lg" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">We are a Digital Agency</span>
-                <h1 class="text-2xl md:text-5xl font-bold mb-6" style="color:#FF9900;" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="100">
+                <span class="inline-block border-2 border-white/50 text-white/80 font-semibold px-6 py-2 rounded-full mb-8 shadow-lg" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">We are a Digital Agency</span>
+                <h1 class="text-2xl md:text-5xl font-bold mb-8" style="color:#FF9900;" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="100">
                     We Don't Just Build Websites.<br>We Build Digital Growth Engines.
                 </h1>
-                <p class="text-base md:text-xl text-white mb-8 max-w-xl mx-auto md:mx-0" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="200">
+                <p class="text-base md:text-xl text-white mb-12 max-w-xl mx-auto md:mx-0 leading-relaxed" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="200">
                     Because in 2025, design without performance is dead weight. We help serious brands stay fast, visible, and in control—using strategy, not guesswork.
                 </p>
-                <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="300">
-                    <a href="#contact" class="bg-accent-orange hover:bg-accent-orange-dark text-white font-bold px-8 py-4 rounded-full shadow transition-all text-base md:text-lg">Talk to Us for Free →</a>
-                    <a href="#portfolio" class="border-2 border-accent-orange text-accent-orange hover:bg-accent-orange hover:text-white font-bold px-8 py-4 rounded-full transition-all text-base md:text-lg">Our Recent Projects</a>
+                <div class="flex flex-col md:flex-row gap-6 justify-center md:justify-start" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="300">
+                    <div class="flex flex-col items-center md:items-start">
+                        <a href="#contact" class="bg-accent-orange hover:bg-accent-orange-dark text-white font-bold px-8 py-4 rounded-full shadow transition-all text-sm md:text-base h-14 flex items-center justify-center">Get Your Free Site Audit →</a>
+                        <span class="text-white/70 text-sm mt-2 flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            No credit card required
+                        </span>
+                    </div>
+                    <a href="#portfolio" class="border-2 border-accent-orange text-accent-orange hover:bg-accent-orange hover:text-white font-bold px-8 py-4 rounded-full transition-all text-sm md:text-base h-14 flex items-center justify-center">Our Recent Projects</a>
                 </div>
             </div>
             <!-- Right: Hero Image -->
@@ -236,7 +249,7 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 class="text-2xl md:text-4xl font-bold text-header-bg mb-6">About Devnest</h2>
-                    <p class="text-header-bg text-base md:text-lg mb-4">
+                    <p class="text-header-bg text-base md:text-lg mb-4 leading-relaxed">
                         Devnest is a creative web design and digital solutions agency based in Narok. We specialize in building beautiful, high-performing websites and digital experiences for local businesses and organizations. Our mission is to empower brands to grow, connect, and thrive online through innovative design, reliable development, and personal support. With a passion for creativity and a commitment to excellence, we help our clients stand out and succeed in the digital world.
                     </p>
                 </div>
@@ -288,15 +301,15 @@
                 <!-- Left: Bad Practices -->
                 <div data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
                     <h2 class="text-2xl md:text-4xl font-bold text-header-bg mb-6">Why Most Websites Are Failing in 2025</h2>
-                    <ul class="mb-6 space-y-2 text-base md:text-lg">
+                    <ul class="mb-6 space-y-2 text-base md:text-lg leading-relaxed">
                         <li class="flex items-center"><span class="text-pink-500 text-2xl mr-3">&#10060;</span>Launched and forgotten</li>
                         <li class="flex items-center"><span class="text-pink-500 text-2xl mr-3">&#10060;</span>Slow load times</li>
                         <li class="flex items-center"><span class="text-pink-500 text-2xl mr-3">&#10060;</span>Broken links and outdated plugins</li>
                         <li class="flex items-center"><span class="text-pink-500 text-2xl mr-3">&#10060;</span>Three blog posts and radio silence</li>
                         <li class="flex items-center"><span class="text-pink-500 text-2xl mr-3">&#10060;</span>Random keyword stuffing with zero traffic</li>
                     </ul>
-                    <p class="mb-2 text-header-bg text-base md:text-lg">If that sounds familiar, you don't have a marketing asset—you have a liability.</p>
-                    <p class="text-header-bg text-base md:text-lg">The internet rewards consistency, relevance, and speed. That's what we deliver.</p>
+                    <p class="mb-2 text-header-bg text-base md:text-lg leading-relaxed">If that sounds familiar, you don't have a marketing asset—you have a liability.</p>
+                    <p class="text-header-bg text-base md:text-lg leading-relaxed">The internet rewards consistency, relevance, and speed. That's what we deliver.</p>
                 </div>
                 <!-- Right: Website Management Card -->
                 <div class="rounded-2xl p-8 bg-header-bg text-white shadow-xl flex flex-col justify-between min-h-[320px]" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
@@ -350,13 +363,13 @@
                 <!-- Testimonial 1 -->
                 <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-accent-orange/20 hover:scale-105 transition-transform" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
                     <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="John Doe" class="w-16 h-16 rounded-full object-cover border-2 border-accent-orange">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Evans Tirike" class="w-16 h-16 rounded-full object-cover border-2 border-accent-orange">
                         <div class="ml-4">
                             <h3 class="text-white font-bold text-lg">Evans Tirike</h3>
                             <p class="text-accent-orange text-sm">Restaurant Owner</p>
                         </div>
                     </div>
-                    <p class="text-light-gray text-base md:text-lg mb-4">"Devnest transformed our online presence completely. Our new website has helped us attract more customers and streamline our ordering process. Highly recommended!"</p>
+                    <p class="text-light-gray text-base md:text-lg mb-4 leading-relaxed">"Devnest transformed our online presence completely. Our new website has helped us attract more customers and streamline our ordering process. Highly recommended!"</p>
                     <div class="flex text-accent-orange">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
@@ -563,25 +576,6 @@
             });
         });
 
-        // Remove custom fade-in on scroll as AOS is now used
-        /*
-        function revealOnScroll() {
-            const fadeEls = document.querySelectorAll('.fade-in');
-            const windowHeight = window.innerHeight;
-            fadeEls.forEach(el => {
-                const top = el.getBoundingClientRect().top;
-                // Adjust the 60px offset as needed for when the animation should trigger
-                if (top < windowHeight - 60) {
-                    el.classList.add('visible');
-                }
-            });
-        }
-        document.addEventListener('DOMContentLoaded', () => {
-            revealOnScroll(); // Check on page load
-            window.addEventListener('scroll', revealOnScroll);
-        });
-        */
-
         // Parallax script for hero background
         const parallaxBg = document.querySelector('.parallax-bg');
         if (parallaxBg) { // Ensure element exists before adding listener
@@ -591,6 +585,29 @@
                 parallaxBg.style.transform = `translateY(${scrolled * 0.3}px)`;
             });
         }
+
+        // Custom smooth scrolling for anchor links to account for fixed header
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    const header = document.querySelector('header');
+                    const headerHeight = header ? header.offsetHeight : 0; // Get header height, default to 0 if not found
+                    
+                    // Calculate scroll position, adjusting for the fixed header
+                    const scrollPosition = targetElement.offsetTop - headerHeight;
+
+                    window.scrollTo({
+                        top: scrollPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
