@@ -80,14 +80,6 @@
             max-height: 500px; /* Sufficient height to show all content */
             opacity: 1;
         }
-        html {
-            scroll-padding-top: 90px; /* Adjust this value to be slightly more than your header's height */
-        }
-    </style>
-    <style>
-        :target {
-            scroll-margin-top: 8rem; /* Adjusted to account for the fixed header height */
-        }
     </style>
 </head>
 <body class="bg-deep-blue">
@@ -593,6 +585,26 @@
                 parallaxBg.style.transform = `translateY(${scrolled * 0.3}px)`;
             });
         }
+
+        // Custom smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const header = document.querySelector('header');
+                const headerHeight = header ? header.offsetHeight : 0;
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - headerHeight,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
