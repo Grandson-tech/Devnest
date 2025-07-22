@@ -606,10 +606,77 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-header-bg text-light-gray py-8">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2024 Devnest Creatives. All rights reserved.</p>
-            <a href="terms-and-services.html" class="text-accent-orange hover:text-accent-orange-dark transition-colors">Terms and Services</a>
+    <footer class="bg-header-bg text-light-gray py-10 mt-12">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row md:justify-between md:items-start gap-10 md:gap-0">
+            <!-- Company Info -->
+            <div class="mb-8 md:mb-0 md:w-1/3">
+                <div class="flex items-center mb-3">
+                    <img src="images/logo.jpg" alt="Devnest Logo" class="h-10 w-10 object-contain mr-2 rounded-full border-2 border-accent-orange" />
+                    <span class="text-accent-orange font-poppins text-2xl font-bold tracking-wide">Devnest</span>
+                </div>
+                <p class="text-light-gray text-sm max-w-xs">Devnest Creatives is a web design and digital solutions agency based in Narok, Kenya. We help brands grow online with strategy, creativity, and care.</p>
+            </div>
+            <!-- Quick Links -->
+            <div class="mb-8 md:mb-0 md:w-1/3 flex flex-col items-start">
+                <h4 class="text-white font-bold mb-3 text-lg">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#about" class="hover:text-accent-orange transition-colors">About Us</a></li>
+                    <li><a href="#services" class="hover:text-accent-orange transition-colors">Our Services</a></li>
+                    <li><a href="#portfolio" class="hover:text-accent-orange transition-colors">Portfolio</a></li>
+                    <li><a href="#blog" class="hover:text-accent-orange transition-colors">Blog</a></li>
+                    <li><a href="#contact" class="hover:text-accent-orange transition-colors">Contact</a></li>
+                    <li><a href="terms-and-services.html" class="hover:text-accent-orange transition-colors">Terms and Services</a></li>
+                </ul>
+            </div>
+            <!-- Contact & Social -->
+            <div class="md:w-1/3 flex flex-col items-start">
+                <h4 class="text-white font-bold mb-3 text-lg">Contact</h4>
+                <div class="flex items-center mb-2">
+                    <span class="mr-2 text-accent-orange">
+                        <!-- Email Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-.659 1.591l-7.091 7.091a2.25 2.25 0 01-3.182 0L3.409 8.584A2.25 2.25 0 012.75 6.993V6.75" />
+                        </svg>
+                    </span>
+                    <a href="mailto:DevNest033@gmail.com" class="hover:text-accent-orange transition-colors text-sm">DevNest033@gmail.com</a>
+                </div>
+                <div class="flex items-center mb-2">
+                    <span class="mr-2 text-accent-orange">
+                        <!-- Phone Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0-1.243 1.007-2.25 2.25-2.25h2.086c.414 0 .81.168 1.102.466l2.06 2.06a1.5 1.5 0 01.44 1.06v2.086a2.25 2.25 0 01-2.25 2.25h-.75a11.25 11.25 0 005.25 5.25v-.75a2.25 2.25 0 012.25-2.25h2.086a1.5 1.5 0 011.06.44l2.06 2.06c.298.292.466.688.466 1.102v2.086a2.25 2.25 0 01-2.25 2.25h-1.5C6.477 21.75 2.25 17.523 2.25 12V6.75z" />
+                        </svg>
+                    </span>
+                    <a href="tel:+254748049230" class="hover:text-accent-orange transition-colors text-sm">+254 748 049230</a>
+                </div>
+                <div class="flex items-center mb-4">
+                    <span class="mr-2 text-accent-orange">
+                        <!-- Location Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21.75c-4.5-4.5-7.5-7.5-7.5-11.25A7.5 7.5 0 0112 3a7.5 7.5 0 017.5 7.5c0 3.75-3 6.75-7.5 11.25z" />
+                            <circle cx="12" cy="10.5" r="2.25" />
+                        </svg>
+                    </span>
+                    <span class="text-sm">Narok, Kenya</span>
+                </div>
+                <div class="flex space-x-4 mt-2">
+                    <a href="#" class="text-accent-orange hover:text-accent-orange-dark" aria-label="Facebook">
+                        <!-- Facebook Icon -->
+                        <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/invites/contact/?igsh=1jyhjw48d8krn&utm_content=ryplv4z" class="text-accent-orange hover:text-accent-orange-dark" aria-label="Instagram" target="_blank" rel="noopener">
+                        <!-- Instagram Icon -->
+                        <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.242 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.242 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.242-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.497 5.783 2.225 7.149 2.163 8.415 2.105 8.795 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.771.131 4.659.363 3.678 1.344c-.98.98-1.213 2.092-1.272 3.373C2.013 5.668 2 6.077 2 12c0 5.923.013 6.332.072 7.613.059 1.281.292 2.393 1.272 3.373.98.98 2.092 1.213 3.373 1.272C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.281-.059 2.393-.292 3.373-1.272.98-.98 1.213-2.092 1.272-3.373.059-1.281.072-1.69.072-7.613 0-5.923-.013-6.332-.072-7.613-.059-1.281-.292-2.393-1.272-3.373-.98-.98-2.092-1.213-3.373-1.272C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                    </a>
+                    <a href="https://x.com/Grandson2345?t=CgQDpiyO9ESIJ4FXAN5phg&s=09" class="text-accent-orange hover:text-accent-orange-dark" aria-label="Twitter" target="_blank" rel="noopener">
+                        <!-- Twitter Icon -->
+                        <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.564-2.005.974-3.127 1.195a4.916 4.916 0 0 0-8.38 4.482C7.691 8.095 4.066 6.13 1.64 3.161c-.542.929-.856 2.01-.857 3.17 0 2.188 1.115 4.117 2.823 5.247a4.904 4.904 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.417A9.867 9.867 0 0 1 0 21.543a13.94 13.94 0 0 0 7.548 2.209c9.058 0 14.009-7.496 14.009-13.986 0-.21 0-.423-.016-.634A9.936 9.936 0 0 0 24 4.557z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 mt-8 border-t border-white/10 pt-6 text-center text-xs text-light-gray">
+            <span>&copy; 2024 Devnest Creatives. All rights reserved.</span>
         </div>
     </footer>
 
@@ -676,11 +743,13 @@
         });
     </script>
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/254748049230" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors z-50" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/254748049230" class="fixed bottom-32 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors z-50" aria-label="Chat on WhatsApp">
         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
             <title>WhatsApp icon</title>
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
         </svg>
     </a>
+    <!-- Tidio Chatbot -->
+    <script src="//code.tidio.co/jkcbjgeao5asf6x3zddjkvhjoanmockv.js" async></script>
 </body>
 </html>
