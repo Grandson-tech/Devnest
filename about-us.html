@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Devnest Creatives | Meet Our Team</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-blue': '#003344',
+                        'accent-orange': '#FF9900',
+                        'accent-orange-dark': '#e67c00',
+                        'header-bg': '#01202b',
+                        'light-gray': '#F3F4F6',
+                        'hero-badge': '#0EA5E9',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+
+    <style>
+        /* Custom styles */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .section-padding {
+            padding: 4rem 1rem;
+        }
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 6rem 2rem;
+            }
+        }
+        .hero-glow {
+            box-shadow: 0 0 60px 10px #FF9900, 0 0 0 8px rgba(255,255,255,0.1);
+        }
+        .mobile-menu-transition {
+            transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.4s cubic-bezier(0.4,0,0.2,1);
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+        }
+        .mobile-menu-transition.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+        .timeline-item {
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #FF9900, transparent);
+        }
+    </style>
+</head>
+<body class="bg-deep-blue">
+    <!-- Header -->
+    <header class="w-full bg-header-bg shadow-sm z-50 sticky top-0">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="images/logo-2.jpg" alt="Devnest Logo" class="h-10 w-10 object-contain rounded-full border-2 border-accent-orange" />
+                <a href="index.html" class="text-accent-orange font-poppins text-2xl md:text-3xl font-bold tracking-wide">Devnest</a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-white hover:text-accent-orange transition-colors font-medium">Home</a>
+                <a href="about-us.html" class="text-accent-orange font-medium">About us</a>
+                <a href="services.html" class="text-white hover:text-accent-orange transition-colors font-medium">Our Services</a>
+                <a href="index.html#portfolio" class="text-white hover:text-accent-orange transition-colors font-medium">Portfolio</a>
+                <a href="index.html#blog" class="text-white hover:text-accent-orange transition-colors font-medium">Blog</a>
+            </div>
+            
+            <a href="index.html#contact" class="hidden md:inline-block bg-accent-orange hover:bg-accent-orange-dark text-base md:text-lg font-bold px-6 py-3 rounded-full shadow transition-all">Book a free Consultation →</a>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white" id="mobile-menu-button">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+        
+        <!-- Mobile Navigation -->
+        <div class="md:hidden mobile-menu-transition" id="mobile-menu">
+            <div class="px-4 py-2 space-y-4 bg-header-bg">
+                <a href="index.html" class="block text-white hover:text-accent-orange transition-colors">Home</a>
+                <a href="about-us.html" class="block text-accent-orange">About us</a>
+                <a href="services.html" class="block text-white hover:text-accent-orange transition-colors">Our Services</a>
+                <a href="index.html#portfolio" class="block text-white hover:text-accent-orange transition-colors">Portfolio</a>
+                <a href="index.html#blog" class="block text-white hover:text-accent-orange transition-colors">Blog</a>
+                <a href="index.html#contact" class="block bg-accent-orange hover:bg-accent-orange-dark text-base font-bold px-6 py-3 rounded-full shadow transition-all text-center">Book a free Consultation →</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative section-padding pt-16 md:pt-24 bg-gradient-to-br from-deep-blue via-header-bg to-black overflow-hidden" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
+        <div class="absolute inset-0 w-full h-full z-0" style="background:rgba(0,34,51,0.95);"></div>
+        <div class="container mx-auto text-center relative z-10">
+            <span class="inline-block border-2 border-accent-orange/50 text-accent-orange font-semibold px-6 py-2 rounded-full mb-8 shadow-lg" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">About Devnest Creatives</span>
+            <h1 class="text-3xl md:text-6xl font-bold mb-8 text-white" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="100">
+                We're Not Just Another<br>
+                <span class="text-accent-orange">Web Agency</span>
+            </h1>
+            <p class="text-lg md:text-xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="200">
+                We're a passionate team of digital craftsmen who believe that every business deserves a website that not only looks stunning but drives real results. Based in Narok, Kenya, we're bringing world-class web solutions to businesses across Africa and beyond.
+            </p>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="bg-white section-padding" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-header-bg mb-6">Meet Our Team</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We're a dynamic duo of frontend and backend specialists, working together to deliver exceptional digital solutions.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <!-- Founder Image -->
+                <div class="order-2 md:order-1" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
+                    <img src="images/my portrate photo.jpg" alt="Devnest Founder" class="w-full max-w-md mx-auto rounded-2xl shadow-2xl hero-glow" />
+                </div>
+                
+                <!-- Founder Story -->
+                <div class="order-1 md:order-2" data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
+                    <span class="text-accent-orange font-semibold text-sm uppercase tracking-wide">Founder & Frontend Specialist</span>
+                    <h3 class="text-2xl md:text-3xl font-bold text-header-bg mb-6">Lead Developer</h3>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        Hi, I'm the founder of Devnest Creatives. I started this journey with a simple mission: to help businesses thrive in the digital age by creating websites that don't just look good, but perform exceptionally well.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                        With years of experience in web development and digital marketing, I understand that every business is unique. That's why we don't use templates or cookie-cutter solutions. Every project we take on is crafted from scratch, tailored to your specific needs and goals.
+                    </p>
+                    
+                    <!-- Key Stats -->
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="text-center p-4 bg-light-gray rounded-lg">
+                            <div class="text-2xl font-bold text-accent-orange">50+</div>
+                            <div class="text-sm text-gray-600">Projects Completed</div>
+                        </div>
+                        <div class="text-center p-4 bg-light-gray rounded-lg">
+                            <div class="text-2xl font-bold text-accent-orange">3+</div>
+                            <div class="text-sm text-gray-600">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Backend Specialist -->
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Backend Specialist Story -->
+                <div class="order-1" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
+                    <span class="text-accent-orange font-semibold text-sm uppercase tracking-wide">Backend Specialist</span>
+                    <h3 class="text-2xl md:text-3xl font-bold text-header-bg mb-6">Mike Kodada</h3>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        Meet Mike, our backend specialist who brings technical expertise and robust server-side solutions to every project. With deep knowledge of databases, APIs, and server architecture, Mike ensures that every website we build is not just beautiful, but powerful and scalable.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                        Mike specializes in creating secure, fast, and reliable backend systems that handle complex business logic, user authentication, data management, and seamless integrations. His expertise allows us to build full-stack solutions that can grow with your business.
+                    </p>
+                    
+                    <!-- Skills -->
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="text-center p-4 bg-light-gray rounded-lg">
+                            <div class="text-lg font-bold text-accent-orange">Backend</div>
+                            <div class="text-sm text-gray-600">Development</div>
+                        </div>
+                        <div class="text-center p-4 bg-light-gray rounded-lg">
+                            <div class="text-lg font-bold text-accent-orange">Database</div>
+                            <div class="text-sm text-gray-600">Architecture</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backend Specialist Image -->
+                <div class="order-2" data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
+                    <img src="images/MikeKodada.jpg" alt="Mike Kodada - Backend Specialist" class="w-full max-w-md mx-auto rounded-2xl shadow-2xl hero-glow" />
+                </div>
+            </div>
+            
+            <!-- Team CTA -->
+            <div class="text-center mt-16">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="index.html#contact" class="bg-accent-orange hover:bg-accent-orange-dark text-white font-bold px-8 py-3 rounded-full shadow transition-all text-center">Let's Work Together</a>
+                    <a href="https://wa.me/254748049230" class="border-2 border-accent-orange text-accent-orange hover:bg-accent-orange hover:text-white font-bold px-8 py-3 rounded-full transition-all text-center">Chat on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Story Section -->
+    <section class="bg-deep-blue section-padding" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Our Story</h2>
+                <p class="text-xl text-white/80 max-w-3xl mx-auto">
+                    From a small startup to a trusted digital partner for businesses across Kenya and beyond
+                </p>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="max-w-4xl mx-auto space-y-12">
+                <div class="timeline-item pl-8" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
+                    <div class="bg-header-bg p-8 rounded-2xl border-l-4 border-accent-orange">
+                        <div class="text-accent-orange font-bold text-lg mb-2">2022 - The Beginning</div>
+                        <h3 class="text-xl font-bold text-white mb-4">Devnest Creatives is Born</h3>
+                        <p class="text-white/80 leading-relaxed">
+                            Started as a one-person operation with a vision to create websites that actually work. The first few projects taught us that success in web design isn't just about aesthetics—it's about understanding business goals and user behavior.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item pl-8" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="100">
+                    <div class="bg-header-bg p-8 rounded-2xl border-l-4 border-accent-orange">
+                        <div class="text-accent-orange font-bold text-lg mb-2">2023 - Growth & Learning</div>
+                        <h3 class="text-xl font-bold text-white mb-4">Expanding Our Expertise</h3>
+                        <p class="text-white/80 leading-relaxed">
+                            As we worked with more clients, we expanded our services to include digital marketing, SEO optimization, and ongoing website maintenance. We learned that the best websites are those that grow and evolve with the business.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item pl-8" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="200">
+                    <div class="bg-header-bg p-8 rounded-2xl border-l-4 border-accent-orange">
+                         <div class="text-accent-orange font-bold text-lg mb-2">2024 - Scaling & Innovation</div>
+                         <h3 class="text-xl font-bold text-white mb-4">Building a Strong Foundation</h3>
+                         <p class="text-white/80 leading-relaxed">
+                             In 2024, we focused on scaling our operations and building a robust team. We welcomed Mike Kodada as our backend specialist, allowing us to offer comprehensive full-stack solutions. This year marked our transition from a solo operation to a collaborative team approach.
+                         </p>
+                     </div>
+                 </div>
+                 
+                 <div class="timeline-item pl-8" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="300">
+                     <div class="bg-header-bg p-8 rounded-2xl border-l-4 border-accent-orange">
+                         <div class="text-accent-orange font-bold text-lg mb-2">2025 - Present Day</div>
+                        <h3 class="text-xl font-bold text-white mb-4">Trusted Digital Partner</h3>
+                        <p class="text-white/80 leading-relaxed">
+                            Today, Devnest Creatives is a trusted partner for businesses across Kenya and beyond. We've helped over 50 businesses establish their digital presence, and we're just getting started. Our commitment to quality, performance, and results remains stronger than ever.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="bg-white section-padding" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-header-bg mb-6">Our Core Values</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    The principles that guide everything we do
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-accent-orange via-accent-orange-dark to-header-bg border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
+                    <div class="text-4xl mb-6 text-white">🎯</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Results-Driven</h3>
+                    <p class="text-white leading-relaxed text-center">
+                        We don't just build websites—we build digital growth engines. Every design decision is made with your business goals in mind.
+                    </p>
+                </div>
+                
+                <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-deep-blue via-header-bg to-black border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="100">
+                    <div class="text-4xl mb-6 text-accent-orange">🤝</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Partnership</h3>
+                    <p class="text-light-gray leading-relaxed text-center">
+                        We see ourselves as an extension of your team. Your success is our success, and we're committed to your long-term growth.
+                    </p>
+                </div>
+                
+                <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-header-bg via-deep-blue to-black border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="200">
+                    <div class="text-4xl mb-6 text-accent-orange">💡</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Innovation</h3>
+                    <p class="text-light-gray leading-relaxed text-center">
+                        We stay ahead of the curve with the latest technologies and design trends, ensuring your website is always cutting-edge.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="bg-white section-padding" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-header-bg mb-6">Why Choose Devnest?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We're not just another web agency. Here's what makes us different.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-accent-orange via-accent-orange-dark to-header-bg border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
+                    <div class="text-4xl mb-6 text-white">⚡</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Fast Performance</h3>
+                    <p class="text-white leading-relaxed text-center">
+                        Lightning-fast websites that load in under 3 seconds
+                    </p>
+                </div>
+                
+                <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-deep-blue via-header-bg to-black border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="100">
+                    <div class="text-4xl mb-6 text-accent-orange">📱</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Mobile-First</h3>
+                    <p class="text-light-gray leading-relaxed text-center">
+                        Every website is designed mobile-first for optimal experience
+                    </p>
+                </div>
+                
+                <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-header-bg via-deep-blue to-black border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="200">
+                    <div class="text-4xl mb-6 text-accent-orange">🔍</div>
+                    <h3 class="text-xl font-bold text-white mb-4">SEO Optimized</h3>
+                    <p class="text-light-gray leading-relaxed text-center">
+                        Built with search engines in mind for better visibility
+                    </p>
+                </div>
+                
+                <div class="rounded-2xl p-8 shadow-xl bg-gradient-to-br from-accent-orange via-accent-orange-dark to-header-bg border-2 border-accent-orange/30 flex flex-col items-center hover:scale-105 transition-transform" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="300">
+                    <div class="text-4xl mb-6 text-white">🛡️</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Secure & Reliable</h3>
+                    <p class="text-white leading-relaxed text-center">
+                        Enterprise-grade security and 99.9% uptime guarantee
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-accent-orange to-accent-orange-dark section-padding" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Digital Presence?</h2>
+            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Let's discuss how we can help your business grow online. Book a free consultation today.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html#contact" class="bg-white text-accent-orange hover:bg-gray-100 font-bold px-8 py-4 rounded-full shadow transition-all text-center">Get Started Today</a>
+                <a href="https://wa.me/254748049230" class="border-2 border-white text-white hover:bg-white hover:text-accent-orange font-bold px-8 py-4 rounded-full transition-all text-center">Chat on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-header-bg text-white section-padding">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="images/logo-2.jpg" alt="Devnest Logo" class="h-12 w-12 object-contain rounded-full border-2 border-accent-orange" />
+                        <span class="text-accent-orange font-poppins text-2xl font-bold">Devnest</span>
+                    </div>
+                    <p class="text-light-gray mb-6 max-w-md">
+                        We help businesses thrive in the digital age by creating websites that don't just look good, but perform exceptionally well.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-accent-orange hover:text-accent-orange-dark" aria-label="Facebook">
+                            <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/invites/contact/?igsh=1jyhjw48d8krn&utm_content=ryplv4z" class="text-accent-orange hover:text-accent-orange-dark" aria-label="Instagram" target="_blank" rel="noopener">
+                            <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.242 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.242 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.242-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.497 5.783 2.225 7.149 2.163 8.415 2.105 8.795 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.771.131 4.659.363 3.678 1.344c-.98.98-1.213 2.092-1.272 3.373C2.013 5.668 2 6.077 2 12c0 5.923.013 6.332.072 7.613.059 1.281.292 2.393 1.272 3.373.98.98 2.092 1.213 3.373 1.272C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.281-.059 2.393-.292 3.373-1.272.98-.98 1.213-2.092 1.272-3.373.059-1.281.072-1.69.072-7.613 0-5.923-.013-6.332-.072-7.613-.059-1.281-.292-2.393-1.272-3.373-.98-.98-2.092-1.213-3.373-1.272C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                        </a>
+                        <a href="https://x.com/Grandson2345?t=CgQDpiyO9ESIJ4FXAN5phg&s=09" class="text-accent-orange hover:text-accent-orange-dark" aria-label="Twitter" target="_blank" rel="noopener">
+                            <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.564-2.005.974-3.127 1.195a4.916 4.916 0 0 0-8.38 4.482C7.691 8.095 4.066 6.13 1.64 3.161c-.542.929-.856 2.01-.857 3.17 0 2.188 1.115 4.117 2.823 5.247a4.904 4.904 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.417A9.867 9.867 0 0 1 0 21.543a13.94 13.94 0 0 0 7.548 2.209c9.058 0 14.009-7.496 14.009-13.986 0-.21 0-.423-.016-.634A9.936 9.936 0 0 0 24 4.557z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Services</h3>
+                    <ul class="space-y-3 text-light-gray">
+                        <li><a href="index.html#services" class="hover:text-accent-orange transition-colors">Web Design</a></li>
+                        <li><a href="index.html#services" class="hover:text-accent-orange transition-colors">Web Development</a></li>
+                        <li><a href="index.html#services" class="hover:text-accent-orange transition-colors">Digital Marketing</a></li>
+                        <li><a href="index.html#services" class="hover:text-accent-orange transition-colors">SEO Optimization</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Contact</h3>
+                    <div class="space-y-3 text-light-gray">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-accent-orange">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                            </span>
+                            <span class="text-sm">+254 748 049 230</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-accent-orange">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </span>
+                            <span class="text-sm">Narok, Kenya</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 mt-8 border-t border-white/10 pt-6 text-center text-xs text-light-gray">
+            <span>&copy; 2024 Devnest Creatives. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 700,
+            easing: 'ease-out',
+            once: true,
+            offset: 120
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let menuOpen = false;
+        mobileMenuButton.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileMenu.classList.add('open');
+            } else {
+                mobileMenu.classList.remove('open');
+            }
+        });
+
+        // Close mobile menu when a nav link is clicked
+        const mobileNavLinks = mobileMenu.querySelectorAll('a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                menuOpen = false;
+            });
+        });
+    </script>
+    
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254748049230" class="fixed bottom-32 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors z-50" aria-label="Chat on WhatsApp">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
+            <title>WhatsApp icon</title>
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+    
+    <!-- Tidio Chatbot -->
+    <script src="//code.tidio.co/jkcbjgeao5asf6x3zddjkvhjoanmockv.js" async></script>
+</body>
+</html> 
