@@ -82,6 +82,95 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+        
+        /* Infinite Scroll Styles */
+        .stats-scroll-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .stats-scroll-track {
+            display: flex;
+            animation: scroll-stats 20s linear infinite;
+            width: max-content;
+        }
+        
+        .stats-item {
+            flex-shrink: 0;
+            text-align: center;
+            min-width: 300px;
+            padding: 0 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .stats-item {
+                min-width: 400px;
+            }
+        }
+        
+        @keyframes scroll-stats {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        /* Pause animation on hover */
+        .stats-scroll-track:hover {
+            animation-play-state: paused;
+        }
+        
+        /* Hide scrollbar for process section */
+        .process-scroll-container {
+            -ms-overflow-style: none;  /* Internet Explorer 10+ */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .process-scroll-container::-webkit-scrollbar {
+            display: none;  /* Safari and Chrome */
+        }
+        
+        /* Business Impact Infinite Scroll Styles */
+        .impact-scroll-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .impact-scroll-track {
+            display: flex;
+            animation: scroll-impact 25s linear infinite;
+            width: max-content;
+        }
+        
+        .impact-item {
+            flex-shrink: 0;
+            text-align: center;
+            min-width: 250px;
+            padding: 0 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .impact-item {
+                min-width: 300px;
+            }
+        }
+        
+        @keyframes scroll-impact {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        /* Pause animation on hover */
+        .impact-scroll-track:hover {
+            animation-play-state: paused;
+        }
     </style>
 </head>
 <body class="bg-deep-blue">
@@ -130,27 +219,45 @@
         <div class="absolute inset-0 w-full h-full z-0" style="background:rgba(0,34,51,0.95);"></div>
         <div class="container mx-auto text-center relative z-10">
             <span class="inline-block border-2 border-accent-orange/50 text-accent-orange font-semibold px-6 py-2 rounded-full mb-8 shadow-lg" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">Professional Web Development</span>
-            <h1 class="text-3xl md:text-6xl font-bold mb-8 text-white" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="100">
+            <h1 class="text-2xl md:text-5xl font-bold mb-8 text-white" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="100">
                 Websites That<br>
                 <span class="text-accent-orange">Transform Businesses</span>
             </h1>
-            <p class="text-lg md:text-xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="200">
+            <p class="text-base md:text-xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed" data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="200">
                 In today's digital-first world, your website is more than just an online presence—it's your business's most powerful growth engine. We create professional, high-performing websites that drive real results and help businesses thrive in the digital landscape.
             </p>
             
-            <!-- Impact Stats -->
-            <div class="grid md:grid-cols-3 gap-8 mt-16" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="300">
-                <div class="text-center">
-                    <div class="text-4xl md:text-5xl font-bold impact-stat mb-2">93%</div>
-                    <p class="text-white/80">of customers research online before making a purchase</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl md:text-5xl font-bold impact-stat mb-2">75%</div>
-                    <p class="text-white/80">judge a company's credibility based on their website design</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl md:text-5xl font-bold impact-stat mb-2">3x</div>
-                    <p class="text-white/80">faster growth for businesses with professional websites</p>
+            <!-- Impact Stats with Infinite Scroll -->
+            <div class="mt-16 overflow-hidden" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="300">
+                <div class="stats-scroll-container">
+                    <div class="stats-scroll-track">
+                        <!-- First set of stats -->
+                        <div class="stats-item">
+                            <div class="text-3xl md:text-4xl font-bold impact-stat mb-2">93%</div>
+                            <p class="text-white/80">of customers research online before making a purchase</p>
+                        </div>
+                        <div class="stats-item">
+                            <div class="text-3xl md:text-4xl font-bold impact-stat mb-2">75%</div>
+                            <p class="text-white/80">judge a company's credibility based on their website design</p>
+                        </div>
+                        <div class="stats-item">
+                            <div class="text-3xl md:text-4xl font-bold impact-stat mb-2">3x</div>
+                            <p class="text-white/80">faster growth for businesses with professional websites</p>
+                        </div>
+                        <!-- Duplicate set for seamless loop -->
+                        <div class="stats-item">
+                            <div class="text-3xl md:text-4xl font-bold impact-stat mb-2">93%</div>
+                            <p class="text-white/80">of customers research online before making a purchase</p>
+                        </div>
+                        <div class="stats-item">
+                            <div class="text-3xl md:text-4xl font-bold impact-stat mb-2">75%</div>
+                            <p class="text-white/80">judge a company's credibility based on their website design</p>
+                        </div>
+                        <div class="stats-item">
+                            <div class="text-3xl md:text-4xl font-bold impact-stat mb-2">3x</div>
+                            <p class="text-white/80">faster growth for businesses with professional websites</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -160,40 +267,40 @@
     <section class="bg-white section-padding" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
         <div class="container mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-header-bg mb-6">Why Your Website Matters</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <h2 class="text-2xl md:text-4xl font-bold text-header-bg mb-6">Why Your Website Matters</h2>
+                <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
                     In the digital age, your website is often the first impression potential customers have of your business. Here's why investing in a professional website is crucial for your success.
                 </p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="service-card rounded-2xl p-8 shadow-xl bg-gradient-to-br from-accent-orange via-accent-orange-dark to-header-bg border-2 border-accent-orange/30 flex flex-col items-center text-center" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
-                    <div class="text-4xl mb-6 text-white">🌐</div>
-                    <h3 class="text-xl font-bold text-white mb-4">24/7 Availability</h3>
+                    <div class="text-3xl mb-6 text-white">🌐</div>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-4">24/7 Availability</h3>
                     <p class="text-white leading-relaxed">
                         Your website works around the clock, generating leads and sales even when you're sleeping
                     </p>
                 </div>
                 
                 <div class="service-card rounded-2xl p-8 shadow-xl bg-gradient-to-br from-deep-blue via-header-bg to-black border-2 border-accent-orange/30 flex flex-col items-center text-center" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="100">
-                    <div class="text-4xl mb-6 text-accent-orange">🎯</div>
-                    <h3 class="text-xl font-bold text-white mb-4">Global Reach</h3>
+                    <div class="text-3xl mb-6 text-accent-orange">🎯</div>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-4">Global Reach</h3>
                     <p class="text-light-gray leading-relaxed">
                         Access customers worldwide and expand your market beyond geographical limitations
                     </p>
                 </div>
                 
                 <div class="service-card rounded-2xl p-8 shadow-xl bg-gradient-to-br from-header-bg via-deep-blue to-black border-2 border-accent-orange/30 flex flex-col items-center text-center" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="200">
-                    <div class="text-4xl mb-6 text-accent-orange">💰</div>
-                    <h3 class="text-xl font-bold text-white mb-4">Cost-Effective</h3>
+                    <div class="text-3xl mb-6 text-accent-orange">💰</div>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-4">Cost-Effective</h3>
                     <p class="text-light-gray leading-relaxed">
                         More affordable than traditional marketing with higher ROI and measurable results
                     </p>
                 </div>
                 
                 <div class="service-card rounded-2xl p-8 shadow-xl bg-gradient-to-br from-accent-orange via-accent-orange-dark to-header-bg border-2 border-accent-orange/30 flex flex-col items-center text-center" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="300">
-                    <div class="text-4xl mb-6 text-white">📈</div>
-                    <h3 class="text-xl font-bold text-white mb-4">Scalable Growth</h3>
+                    <div class="text-3xl mb-6 text-white">📈</div>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-4">Scalable Growth</h3>
                     <p class="text-white leading-relaxed">
                         Easy to update and scale as your business grows, without additional infrastructure costs
                     </p>
@@ -206,8 +313,8 @@
     <section class="bg-deep-blue section-padding" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
         <div class="container mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Our Professional Services</h2>
-                <p class="text-xl text-white/80 max-w-3xl mx-auto">
+                <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">Our Professional Services</h2>
+                <p class="text-base md:text-lg text-white/80 max-w-3xl mx-auto">
                     We offer comprehensive web development solutions designed to elevate your business and drive measurable results.
                 </p>
             </div>
@@ -352,13 +459,155 @@
     <section class="bg-white section-padding" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
         <div class="container mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-header-bg mb-6">Our Professional Process</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <h2 class="text-2xl md:text-4xl font-bold text-header-bg mb-6">Our Professional Process</h2>
+                <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
                     We follow a proven methodology that ensures your project is delivered on time, within budget, and exceeds your expectations.
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-4 gap-8">
+            <!-- Mobile: Horizontal Scroll Container -->
+            <div class="md:hidden overflow-x-auto pb-4 -mx-4 px-4 process-scroll-container">
+                <div class="flex space-x-6" style="min-width: max-content;">
+                    <!-- Step 1: Discovery & Planning -->
+                    <div class="group relative flex-shrink-0 w-80" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
+                        <div class="bg-gradient-to-br from-accent-orange via-accent-orange-dark to-header-bg rounded-2xl p-8 shadow-xl border-2 border-accent-orange/30 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full">
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                                    <div class="text-3xl">🔍</div>
+                                </div>
+                                <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                                    <span class="text-white font-bold text-sm">1</span>
+                                </div>
+                                <h3 class="text-xl md:text-2xl font-bold text-white mb-4">Discovery & Planning</h3>
+                                <p class="text-white/90 leading-relaxed">
+                                    We analyze your business goals, target audience, and competitors to create a strategic plan for your website.
+                                </p>
+                                <div class="mt-6 pt-4 border-t border-white/20">
+                                    <ul class="text-white/80 text-sm space-y-2 text-left">
+                                        <li class="flex items-center">
+                                            <span class="text-white mr-2">✓</span>
+                                            Business analysis
+                                        </li>
+                                        <li class="flex items-center">
+                                            <span class="text-white mr-2">✓</span>
+                                            Competitor research
+                                        </li>
+                                        <li class="flex items-center">
+                                            <span class="text-white mr-2">✓</span>
+                                            Strategy development
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Design & Prototyping -->
+                    <div class="group relative flex-shrink-0 w-80" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="100">
+                        <div class="bg-gradient-to-br from-deep-blue via-header-bg to-black rounded-2xl p-8 shadow-xl border-2 border-accent-orange/30 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full">
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                                    <div class="text-3xl">🎨</div>
+                                </div>
+                                <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                                    <span class="text-white font-bold text-sm">2</span>
+                                </div>
+                                <h3 class="text-xl md:text-2xl font-bold text-white mb-4">Design & Prototyping</h3>
+                                <p class="text-light-gray leading-relaxed">
+                                    We create wireframes and design mockups, ensuring the visual direction aligns with your brand and goals.
+                                </p>
+                                <div class="mt-6 pt-4 border-t border-white/20">
+                                    <ul class="text-light-gray text-sm space-y-2 text-left">
+                                        <li class="flex items-center">
+                                            <span class="text-accent-orange mr-2">✓</span>
+                                            Wireframe creation
+                                        </li>
+                                        <li class="flex items-center">
+                                            <span class="text-accent-orange mr-2">✓</span>
+                                            UI/UX design
+                                        </li>
+                                        <li class="flex items-center">
+                                            <span class="text-accent-orange mr-2">✓</span>
+                                            Brand integration
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Development & Testing -->
+                    <div class="group relative flex-shrink-0 w-80" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="200">
+                        <div class="bg-gradient-to-br from-header-bg via-deep-blue to-black rounded-2xl p-8 shadow-xl border-2 border-accent-orange/30 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full">
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                                    <div class="text-3xl">⚙️</div>
+                                </div>
+                                <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                                    <span class="text-white font-bold text-sm">3</span>
+                                </div>
+                                <h3 class="text-xl md:text-2xl font-bold text-white mb-4">Development & Testing</h3>
+                                <p class="text-light-gray leading-relaxed">
+                                    Our team builds your website using modern technologies, followed by rigorous testing across all devices.
+                                </p>
+                                <div class="mt-6 pt-4 border-t border-white/20">
+                                    <ul class="text-light-gray text-sm space-y-2 text-left">
+                                        <li class="flex items-center">
+                                            <span class="text-accent-orange mr-2">✓</span>
+                                            Frontend development
+                                        </li>
+                                        <li class="flex items-center">
+                                            <span class="text-accent-orange mr-2">✓</span>
+                                            Backend integration
+                                        </li>
+                                        <li class="flex items-center">
+                                            <span class="text-accent-orange mr-2">✓</span>
+                                            Quality assurance
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4: Launch & Support -->
+                    <div class="group relative flex-shrink-0 w-80" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="300">
+                        <div class="bg-gradient-to-br from-accent-orange via-accent-orange-dark to-header-bg rounded-2xl p-8 shadow-xl border-2 border-accent-orange/30 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full">
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                                    <div class="text-3xl">🚀</div>
+                                </div>
+                                <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                                    <span class="text-white font-bold text-sm">4</span>
+                                </div>
+                                <h3 class="text-xl md:text-2xl font-bold text-white mb-4">Launch & Support</h3>
+                                <p class="text-white/90 leading-relaxed">
+                                    We launch your website and provide ongoing support to ensure it continues to perform optimally.
+                                </p>
+                                <div class="mt-6 pt-4 border-t border-white/20">
+                                    <ul class="text-white/80 text-sm space-y-2 text-left">
+                                        <li class="flex items-center">
+                                            <span class="text-white mr-2">✓</span>
+                                            Website deployment
+                                        </li>
+                                        <li class="flex items-center">
+                                            <span class="text-white mr-2">✓</span>
+                                            Performance monitoring
+                                        </li>
+                                        <li class="flex items-center">
+                                            <span class="text-white mr-2">✓</span>
+                                            Ongoing maintenance
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Desktop: Grid Layout -->
+            <div class="hidden md:grid md:grid-cols-4 gap-8">
                 <!-- Step 1: Discovery & Planning -->
                 <div class="group relative" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
                     <div class="bg-gradient-to-br from-accent-orange via-accent-orange-dark to-header-bg rounded-2xl p-8 shadow-xl border-2 border-accent-orange/30 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full">
@@ -369,7 +618,7 @@
                             <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                                 <span class="text-white font-bold text-sm">1</span>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-4">Discovery & Planning</h3>
+                            <h3 class="text-xl md:text-2xl font-bold text-white mb-4">Discovery & Planning</h3>
                             <p class="text-white/90 leading-relaxed">
                                 We analyze your business goals, target audience, and competitors to create a strategic plan for your website.
                             </p>
@@ -403,7 +652,7 @@
                             <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                                 <span class="text-white font-bold text-sm">2</span>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-4">Design & Prototyping</h3>
+                            <h3 class="text-xl md:text-2xl font-bold text-white mb-4">Design & Prototyping</h3>
                             <p class="text-light-gray leading-relaxed">
                                 We create wireframes and design mockups, ensuring the visual direction aligns with your brand and goals.
                             </p>
@@ -437,7 +686,7 @@
                             <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                                 <span class="text-white font-bold text-sm">3</span>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-4">Development & Testing</h3>
+                            <h3 class="text-xl md:text-2xl font-bold text-white mb-4">Development & Testing</h3>
                             <p class="text-light-gray leading-relaxed">
                                 Our team builds your website using modern technologies, followed by rigorous testing across all devices.
                             </p>
@@ -471,7 +720,7 @@
                             <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                                 <span class="text-white font-bold text-sm">4</span>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-4">Launch & Support</h3>
+                            <h3 class="text-xl md:text-2xl font-bold text-white mb-4">Launch & Support</h3>
                             <p class="text-white/90 leading-relaxed">
                                 We launch your website and provide ongoing support to ensure it continues to perform optimally.
                             </p>
@@ -502,43 +751,82 @@
     <section class="bg-deep-blue section-padding" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
         <div class="container mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">The Business Impact</h2>
-                <p class="text-xl text-white/80 max-w-3xl mx-auto">
+                <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">The Business Impact</h2>
+                <p class="text-base md:text-lg text-white/80 max-w-3xl mx-auto">
                     Professional websites don't just look good—they drive real business results. Here's what our clients achieve.
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center p-6" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
-                    <div class="text-4xl font-bold text-accent-orange mb-2">300%</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Increase in Leads</h3>
-                    <p class="text-white/70 text-sm">
-                        Average increase in qualified leads after website launch
-                    </p>
-                </div>
-                
-                <div class="text-center p-6" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="100">
-                    <div class="text-4xl font-bold text-accent-orange mb-2">250%</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Revenue Growth</h3>
-                    <p class="text-white/70 text-sm">
-                        Average revenue increase within 6 months
-                    </p>
-                </div>
-                
-                <div class="text-center p-6" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="200">
-                    <div class="text-4xl font-bold text-accent-orange mb-2">85%</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Customer Satisfaction</h3>
-                    <p class="text-white/70 text-sm">
-                        Improved customer satisfaction scores
-                    </p>
-                </div>
-                
-                <div class="text-center p-6" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120" data-aos-delay="300">
-                    <div class="text-4xl font-bold text-accent-orange mb-2">60%</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Cost Reduction</h3>
-                    <p class="text-white/70 text-sm">
-                        Reduction in customer acquisition costs
-                    </p>
+            <!-- Business Impact with Infinite Scroll -->
+            <div class="overflow-hidden">
+                <div class="impact-scroll-container">
+                    <div class="impact-scroll-track">
+                        <!-- First set of impact stats -->
+                        <div class="impact-item">
+                            <div class="text-3xl md:text-4xl font-bold text-accent-orange mb-2">300%</div>
+                            <h3 class="text-lg md:text-xl font-bold text-white mb-2">Increase in Leads</h3>
+                            <p class="text-white/70 text-sm">
+                                Average increase in qualified leads after website launch
+                            </p>
+                        </div>
+                        
+                        <div class="impact-item">
+                            <div class="text-3xl md:text-4xl font-bold text-accent-orange mb-2">250%</div>
+                            <h3 class="text-lg md:text-xl font-bold text-white mb-2">Revenue Growth</h3>
+                            <p class="text-white/70 text-sm">
+                                Average revenue increase within 6 months
+                            </p>
+                        </div>
+                        
+                        <div class="impact-item">
+                            <div class="text-3xl md:text-4xl font-bold text-accent-orange mb-2">85%</div>
+                            <h3 class="text-lg md:text-xl font-bold text-white mb-2">Customer Satisfaction</h3>
+                            <p class="text-white/70 text-sm">
+                                Improved customer satisfaction scores
+                            </p>
+                        </div>
+                        
+                        <div class="impact-item">
+                            <div class="text-3xl md:text-4xl font-bold text-accent-orange mb-2">60%</div>
+                            <h3 class="text-lg md:text-xl font-bold text-white mb-2">Cost Reduction</h3>
+                            <p class="text-white/70 text-sm">
+                                Reduction in customer acquisition costs
+                            </p>
+                        </div>
+                        
+                        <!-- Duplicate set for seamless loop -->
+                        <div class="impact-item">
+                            <div class="text-3xl md:text-4xl font-bold text-accent-orange mb-2">300%</div>
+                            <h3 class="text-lg md:text-xl font-bold text-white mb-2">Increase in Leads</h3>
+                            <p class="text-white/70 text-sm">
+                                Average increase in qualified leads after website launch
+                            </p>
+                        </div>
+                        
+                        <div class="impact-item">
+                            <div class="text-3xl md:text-4xl font-bold text-accent-orange mb-2">250%</div>
+                            <h3 class="text-lg md:text-xl font-bold text-white mb-2">Revenue Growth</h3>
+                            <p class="text-white/70 text-sm">
+                                Average revenue increase within 6 months
+                            </p>
+                        </div>
+                        
+                        <div class="impact-item">
+                            <div class="text-3xl md:text-4xl font-bold text-accent-orange mb-2">85%</div>
+                            <h3 class="text-lg md:text-xl font-bold text-white mb-2">Customer Satisfaction</h3>
+                            <p class="text-white/70 text-sm">
+                                Improved customer satisfaction scores
+                            </p>
+                        </div>
+                        
+                        <div class="impact-item">
+                            <div class="text-3xl md:text-4xl font-bold text-accent-orange mb-2">60%</div>
+                            <h3 class="text-lg md:text-xl font-bold text-white mb-2">Cost Reduction</h3>
+                            <p class="text-white/70 text-sm">
+                                Reduction in customer acquisition costs
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -547,13 +835,108 @@
     <!-- CTA Section -->
     <section class="bg-gradient-to-r from-accent-orange to-accent-orange-dark section-padding" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
-            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
+            <p class="text-base md:text-lg text-white/90 mb-8 max-w-2xl mx-auto">
                 Let's discuss how a professional website can drive growth for your business. Book a free consultation today.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="index.html#contact" class="bg-white text-accent-orange hover:bg-gray-100 font-bold px-8 py-4 rounded-full shadow transition-all text-center">Get Started Today</a>
                 <a href="https://wa.me/254748049230" class="border-2 border-white text-white hover:bg-white hover:text-accent-orange font-bold px-8 py-4 rounded-full transition-all text-center">Chat on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Started Form Section -->
+    <section class="bg-white section-padding" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out" data-aos-offset="120">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-4xl font-bold text-header-bg mb-6">Start Your Website Project</h2>
+                <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+                    Tell us about your project and we'll get back to you with a customized proposal. Fill out our detailed questionnaire to help us understand your needs better.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-br from-deep-blue via-header-bg to-black rounded-2xl p-8 md:p-12 shadow-2xl border-2 border-accent-orange/30">
+                    <div class="text-center mb-8">
+                        <div class="text-3xl mb-4">📋</div>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-4">Project Information Form</h3>
+                        <p class="text-white/80 text-lg">
+                            This comprehensive form will help us understand your business goals, design preferences, and technical requirements to create the perfect website for you.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div class="space-y-4">
+                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                                <h4 class="text-accent-orange font-bold mb-2">What We'll Ask About:</h4>
+                                <ul class="text-white/80 text-sm space-y-2">
+                                    <li class="flex items-center">
+                                        <span class="text-accent-orange mr-2">✓</span>
+                                        Your business goals and target audience
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="text-accent-orange mr-2">✓</span>
+                                        Design preferences and brand guidelines
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="text-accent-orange mr-2">✓</span>
+                                        Required features and functionality
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="text-accent-orange mr-2">✓</span>
+                                        Content and assets you'll provide
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="text-accent-orange mr-2">✓</span>
+                                        Timeline and budget considerations
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                                <h4 class="text-accent-orange font-bold mb-2">What Happens Next:</h4>
+                                <ul class="text-white/80 text-sm space-y-2">
+                                    <li class="flex items-center">
+                                        <span class="text-white mr-2">1.</span>
+                                        You fill out the detailed form
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="text-white mr-2">2.</span>
+                                        We review your requirements
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="text-white mr-2">3.</span>
+                                        We create a customized proposal
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="text-white mr-2">4.</span>
+                                        We schedule a consultation call
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="text-white mr-2">5.</span>
+                                        We begin your project journey
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a href="https://forms.google.com/your-form-link-here" target="_blank" rel="noopener" class="inline-flex items-center bg-accent-orange hover:bg-accent-orange-dark text-white font-bold px-8 py-4 rounded-full shadow-lg transition-all transform hover:scale-105">
+                            <span class="mr-2">📝</span>
+                            Fill Out Project Form
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
+                        <p class="text-white/60 text-sm mt-4">
+                            Takes about 5-10 minutes to complete • All information is kept confidential
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
